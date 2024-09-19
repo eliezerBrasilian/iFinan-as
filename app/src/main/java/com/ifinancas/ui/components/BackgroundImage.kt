@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box

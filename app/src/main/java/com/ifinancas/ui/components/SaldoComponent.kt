@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -15,8 +15,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ifinancas.R
-import com.ifinancas.utils.AppUtils.Companion.toDefaultCurrency
+import com.br.ifinancas.R
+import com.br.ifinancas.utils.AppUtils.Companion.toDefaultCurrency
 import compose.icons.FeatherIcons
 import compose.icons.feathericons.Eye
 import compose.icons.feathericons.EyeOff

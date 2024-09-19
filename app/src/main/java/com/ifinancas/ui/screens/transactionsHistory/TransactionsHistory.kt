@@ -1,4 +1,4 @@
-package com.ifinancas.ui.screens.transactionsHistory
+package com.br.ifinancas.ui.screens.transactionsHistory
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -22,14 +22,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.ifinancas.data.customremembers.rememberCustomModalBottomSheetState
-import com.ifinancas.db.models.TransactionModel.Transaction
-import com.ifinancas.db.models.TransactionModel.TransactionViewModel
-import com.ifinancas.navigation.NavigationBarColor
-import com.ifinancas.ui.components.PopUpDeleteRegister
-import com.ifinancas.ui.components.TransactionHistoryOverlayView
-import com.ifinancas.ui.components.TransactionsHistoryTop
-import com.ifinancas.ui.theme.MAINPURPLE
+import com.br.ifinancas.data.customremembers.rememberCustomModalBottomSheetState
+import com.br.ifinancas.db.models.TransactionModel.Transaction
+import com.br.ifinancas.db.models.TransactionModel.TransactionViewModel
+import com.br.ifinancas.navigation.NavigationBarColor
+import com.br.ifinancas.ui.components.TransactionHistoryOverlayView
+import com.br.ifinancas.ui.components.TransactionsHistoryTop
+import com.br.ifinancas.ui.customEffects.PopUpDeleteRegisterEffect
+import com.br.ifinancas.ui.theme.MAINPURPLE
 
 @RequiresApi(Build.VERSION_CODES.O)
 @OptIn(ExperimentalMaterialApi::class)
@@ -88,8 +88,8 @@ fun TransactionsHistory(
     }
 
     if (popUpDeleteRegisterIsVisible) {
-        PopUpDeleteRegister(
-            onDismissRequest = onDismissRequestOpoUp,
+        PopUpDeleteRegisterEffect(
+            //onDismissRequest = onDismissRequestOpoUp,
             delete = delete,
         )
     }

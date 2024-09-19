@@ -1,4 +1,4 @@
-package com.ifinancas.data.enums
+package com.br.ifinancas.data.enums
 
 enum class KeyboardTypes {
     EMAIL,

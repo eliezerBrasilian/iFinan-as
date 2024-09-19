@@ -1,4 +1,4 @@
-package com.ifinancas.data.customremembers
+package com.br.ifinancas.data.customremembers
 
 import androidx.compose.material.ExperimentalMaterialApi
 //noinspection UsingMaterialAndMaterial3Libraries
@@ -7,7 +7,7 @@ import androidx.compose.material.ModalBottomSheetValue
 import androidx.compose.material.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import com.ifinancas.utils.AppUtils
+import com.br.ifinancas.utils.AppUtils
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable

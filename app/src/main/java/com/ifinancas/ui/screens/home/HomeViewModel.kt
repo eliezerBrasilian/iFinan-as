@@ -1,23 +1,23 @@
-package com.ifinancas.ui.screens.Home
+package com.br.ifinancas.ui.screens.home
 
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ifinancas.db.models.FiModel.FiModel
-import com.ifinancas.db.models.FiModel.FiRepository
-import com.ifinancas.db.models.FiModel.FiiWithName
-import com.ifinancas.db.models.FiiNamesModel.FiisNameRepository
-import com.ifinancas.db.models.FiiNamesModel.FiisNamesModel
-import com.ifinancas.db.models.PatrimonioModel.PatrimonioModel
-import com.ifinancas.db.models.PatrimonioModel.PatrimonioRepository
-import com.ifinancas.db.models.PatrimonioModel.PatrimonioWithName
-import com.ifinancas.db.models.PatrimonioNamesModel.PatrimonioNamesModel
-import com.ifinancas.db.models.PatrimonioNamesModel.PatrimonioNamesRepository
-import com.ifinancas.services.DateTimeService
-import com.ifinancas.utils.AppUtils.Companion.AppTag
-import com.ifinancas.utils.AppUtils.Companion.getMesAno
-import com.ifinancas.utils.AppUtils.Companion.showToast
+import com.br.ifinancas.db.models.FiModel.FiModel
+import com.br.ifinancas.db.models.FiModel.FiRepository
+import com.br.ifinancas.db.models.FiModel.FiiWithName
+import com.br.ifinancas.db.models.FiiNamesModel.FiisNameRepository
+import com.br.ifinancas.db.models.FiiNamesModel.FiisNamesModel
+import com.br.ifinancas.db.models.PatrimonioModel.PatrimonioModel
+import com.br.ifinancas.db.models.PatrimonioModel.PatrimonioRepository
+import com.br.ifinancas.db.models.PatrimonioModel.PatrimonioWithName
+import com.br.ifinancas.db.models.PatrimonioNamesModel.PatrimonioNamesModel
+import com.br.ifinancas.db.models.PatrimonioNamesModel.PatrimonioNamesRepository
+import com.br.ifinancas.services.DateTimeService
+import com.br.ifinancas.utils.AppUtils.Companion.AppTag
+import com.br.ifinancas.utils.AppUtils.Companion.getMesAno
+import com.br.ifinancas.utils.AppUtils.Companion.showToast
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -52,6 +52,23 @@ class HomeViewModel
 
     fun togglePopupRegisterVisibility() {
         _uiState.update { it.copy(popupAddRegisterIsVisible = !it.popupAddRegisterIsVisible) }
+    }
+
+    /*PATRIMONIO*/
+
+    fun deletePatrimonio(id: Int, value: Float) = viewModelScope.launch {
+
+        try {
+            patrimonioRepository.delete(id)
+
+            _uiState.update { currentState ->
+                currentState.copy(
+                    patrimonioList = currentState.patrimonioList.filter { it.patrimonioModel.id != id },
+                    patrimonioTotalCount = currentState.patrimonioTotalCount - value
+                )
+            }
+        } catch (_: Exception) {
+        }
     }
 
     fun loadPatrimonios() = viewModelScope.launch {
@@ -277,5 +294,6 @@ class HomeViewModel
     fun toggleBalanceVisibility() {
         _uiState.update { it.copy(balanceIsVisible = !it.balanceIsVisible) }
     }
+
 
 }

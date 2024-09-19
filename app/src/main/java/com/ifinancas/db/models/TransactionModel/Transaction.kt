@@ -1,8 +1,8 @@
-package com.ifinancas.db.models.TransactionModel
+package com.br.ifinancas.db.models.TransactionModel
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.ifinancas.data.enums.Category
+import com.br.ifinancas.data.enums.Category
 import java.util.Date
 
 @Entity(tableName = "transaction_table")

@@ -1,4 +1,4 @@
-package com.ifinancas.ui.screens.Home.widgets
+package com.br.ifinancas.ui.screens.home.widgets
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -12,7 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.ifinancas.ui.screens.Home.HomeUiState
+import com.br.ifinancas.ui.screens.home.HomeUiState
 import compose.icons.FontAwesomeIcons
 import compose.icons.fontawesomeicons.Solid
 import compose.icons.fontawesomeicons.solid.CaretDown

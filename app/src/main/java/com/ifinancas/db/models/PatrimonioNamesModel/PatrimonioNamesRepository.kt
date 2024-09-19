@@ -1,4 +1,4 @@
-package com.ifinancas.db.models.PatrimonioNamesModel
+package com.br.ifinancas.db.models.PatrimonioNamesModel
 
 import javax.inject.Inject
 

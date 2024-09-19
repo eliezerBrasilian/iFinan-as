@@ -1,7 +1,7 @@
-package com.ifinancas.ui.screens.Home
+package com.br.ifinancas.ui.screens.home
 
-import com.ifinancas.db.models.FiModel.FiiWithName
-import com.ifinancas.db.models.PatrimonioModel.PatrimonioWithName
+import com.br.ifinancas.db.models.FiModel.FiiWithName
+import com.br.ifinancas.db.models.PatrimonioModel.PatrimonioWithName
 
 data class HomeUiState(
     val monthSelected: String = "",

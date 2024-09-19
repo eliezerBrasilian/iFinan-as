@@ -1,4 +1,4 @@
-package com.ifinancas.db.models.FiiNamesModel
+package com.br.ifinancas.db.models.FiiNamesModel
 
 import javax.inject.Inject
 

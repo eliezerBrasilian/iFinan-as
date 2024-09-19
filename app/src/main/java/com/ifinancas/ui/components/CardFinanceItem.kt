@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -23,8 +23,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.ifinancas.navigation.NavigationScreens
-import com.ifinancas.utils.AppUtils.Companion.toDefaultCurrency
+import com.br.ifinancas.navigation.NavigationScreens
+import com.br.ifinancas.utils.AppUtils.Companion.toDefaultCurrency
 
 @Composable
 fun CardFinanceItem(

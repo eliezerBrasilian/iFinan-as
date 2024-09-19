@@ -1,4 +1,4 @@
-package com.ifinancas.ui.screens.Home.widgets
+package com.br.ifinancas.ui.screens.home.widgets
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween

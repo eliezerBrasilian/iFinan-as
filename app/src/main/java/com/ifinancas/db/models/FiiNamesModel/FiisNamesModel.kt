@@ -1,4 +1,4 @@
-package com.ifinancas.db.models.FiiNamesModel
+package com.br.ifinancas.db.models.FiiNamesModel
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

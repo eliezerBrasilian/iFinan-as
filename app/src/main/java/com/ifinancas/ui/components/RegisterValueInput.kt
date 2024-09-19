@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
@@ -15,8 +15,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.sp
+import com.br.ifinancas.R
 import com.braziliancurrencyvisualtransformation.BrazilianCurrencyVisualTransformation
-import com.ifinancas.R
 
 @Composable
 fun RegisterValueInput(

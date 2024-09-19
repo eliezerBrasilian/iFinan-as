@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -12,6 +12,11 @@ import androidx.compose.ui.unit.dp
 
 @Preview
 @Composable
-fun Line(modifier: Modifier = Modifier.fillMaxWidth().height((0.7).dp).background(Color.LightGray)){
+fun Line(
+    modifier: Modifier = Modifier
+        .fillMaxWidth()
+        .height((0.7).dp)
+        .background(Color.LightGray)
+) {
     Box(modifier = modifier)
 }

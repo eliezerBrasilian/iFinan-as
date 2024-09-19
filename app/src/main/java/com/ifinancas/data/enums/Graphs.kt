@@ -1,4 +1,4 @@
-package com.ifinancas.data.enums
+package com.br.ifinancas.data.enums
 
 object Graph {
     const val ROOT = "root_graph"

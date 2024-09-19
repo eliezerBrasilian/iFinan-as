@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Text
@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.sp
 
 @Preview
 @Composable
-fun ErrorText(text:String = ""){
+fun ErrorText(text: String = "") {
     Text(
         text = text,
         color = Color.Red,

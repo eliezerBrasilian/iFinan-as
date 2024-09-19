@@ -1,4 +1,4 @@
-package com.ifinancas.navigation
+package com.br.ifinancas.navigation
 
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.runtime.Composable

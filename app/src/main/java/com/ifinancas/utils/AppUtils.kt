@@ -1,14 +1,14 @@
-package com.ifinancas.utils
+package com.br.ifinancas.utils
 
 import android.content.Context
 import android.content.res.Configuration
 import android.widget.Toast
 import androidx.compose.ui.graphics.Color
-import com.ifinancas.R
-import com.ifinancas.data.enums.Category
-import com.ifinancas.ui.theme.BACKGROUNDGREEN
-import com.ifinancas.ui.theme.BACKGROUNDRED
-import com.ifinancas.ui.theme.MAINPURPLE
+import com.br.ifinancas.R
+import com.br.ifinancas.data.enums.Category
+import com.br.ifinancas.ui.theme.BACKGROUNDGREEN
+import com.br.ifinancas.ui.theme.BACKGROUNDRED
+import com.br.ifinancas.ui.theme.MAINPURPLE
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.Calendar

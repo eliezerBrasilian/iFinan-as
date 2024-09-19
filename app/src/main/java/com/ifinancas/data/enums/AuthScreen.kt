@@ -1,4 +1,4 @@
-package com.ifinancas.data.enums
+package com.br.ifinancas.data.enums
 
 sealed class AuthScreen(val route: String) {
     object Login : AuthScreen(route = "LOGIN")

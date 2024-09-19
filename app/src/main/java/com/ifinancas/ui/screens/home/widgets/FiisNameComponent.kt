@@ -1,4 +1,4 @@
-package com.ifinancas.ui.screens.Home.widgets
+package com.br.ifinancas.ui.screens.home.widgets
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -23,9 +23,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ifinancas.db.models.FiiNamesModel.FiisNamesModel
-import com.ifinancas.ui.screens.Home.HomeUiState
-import com.ifinancas.ui.screens.Home.HomeViewModel
+import com.br.ifinancas.db.models.FiiNamesModel.FiisNamesModel
+import com.br.ifinancas.ui.screens.home.HomeUiState
+import com.br.ifinancas.ui.screens.home.HomeViewModel
 
 @Composable
 fun FiisNameComponent(

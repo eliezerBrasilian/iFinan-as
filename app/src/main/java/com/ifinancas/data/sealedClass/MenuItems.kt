@@ -1,7 +1,7 @@
-package com.ifinancas.data.sealedClass
+package com.br.ifinancas.data.sealedClass
 
 import androidx.compose.ui.graphics.Color
-import com.ifinancas.data.enums.Tags
+import com.br.ifinancas.data.enums.Tags
 
 sealed class MenuItems(val tag: Tags, val circleColor: Color) {
     data object Revenue : MenuItems(Tags.REVENUE, Color(0xff35C761))

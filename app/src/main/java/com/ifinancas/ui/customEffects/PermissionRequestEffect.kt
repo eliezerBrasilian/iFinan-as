@@ -1,4 +1,4 @@
-package com.ifinancas.ui.customEffects
+package com.br.ifinancas.ui.customEffects
 
 import android.Manifest
 import android.content.pm.PackageManager

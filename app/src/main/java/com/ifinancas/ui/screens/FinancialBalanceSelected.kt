@@ -1,7 +1,6 @@
-package com.ifinancas.ui.screens
+package com.br.ifinancas.ui.screens
 
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -14,31 +13,29 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.ModalBottomSheetLayout
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.ifinancas.data.customremembers.rememberCustomModalBottomSheetState
-import com.ifinancas.data.enums.Tags
-import com.ifinancas.db.models.TransactionModel.Transaction
-import com.ifinancas.db.models.TransactionModel.TransactionViewModel
-import com.ifinancas.navigation.CustomTopBar
-import com.ifinancas.navigation.NavigationBarColor
-import com.ifinancas.ui.components.FinanceSelectRow
-import com.ifinancas.ui.components.FinancialBalanceSelectedMenu
-import com.ifinancas.ui.components.FinancialBalanceSelectedTop
-import com.ifinancas.ui.components.PopUpDeleteRegister
-import com.ifinancas.ui.components.TransactionHistoryOverlayView
-import com.ifinancas.utils.AppUtils
-import com.ifinancas.utils.AppUtils.Companion.AppTag
+import com.br.ifinancas.data.customremembers.rememberCustomModalBottomSheetState
+import com.br.ifinancas.data.enums.Tags
+import com.br.ifinancas.db.models.TransactionModel.Transaction
+import com.br.ifinancas.db.models.TransactionModel.TransactionViewModel
+import com.br.ifinancas.navigation.CustomTopBar
+import com.br.ifinancas.navigation.NavigationBarColor
+import com.br.ifinancas.ui.components.FinanceSelectRow
+import com.br.ifinancas.ui.components.FinancialBalanceSelectedMenu
+import com.br.ifinancas.ui.components.FinancialBalanceSelectedTop
+import com.br.ifinancas.ui.components.TransactionHistoryOverlayView
+import com.br.ifinancas.ui.customEffects.PopUpDeleteRegisterEffect
+import com.br.ifinancas.utils.AppUtils
 
 @RequiresApi(Build.VERSION_CODES.O)
 @OptIn(ExperimentalMaterialApi::class)
@@ -50,11 +47,11 @@ fun FinancialBalanceSelected(
     transactionViewModel: TransactionViewModel = hiltViewModel()
 ) {
 
+    val uiState = transactionViewModel.uiState.collectAsState()
+
     var tagSelected by remember {
         mutableStateOf(tag.toString())
     }
-
-    Log.d(AppTag, "Tag seleced: $tagSelected")
 
     var expanded by remember {
         mutableStateOf(false)
@@ -70,7 +67,6 @@ fun FinancialBalanceSelected(
         backgroundSelected = AppUtils.getBackgroundColor(it)
     }
 
-
     var popUpDeleteRegisterIsVisible by remember {
         mutableStateOf(false)
     }
@@ -81,30 +77,25 @@ fun FinancialBalanceSelected(
 
     var currentMonthYear by remember { mutableStateOf(transactionViewModel.getCurrentMonthYear()) }
 
-    var totalAmount by remember { mutableFloatStateOf(0f) }
-
     var transactions by remember { mutableStateOf<List<Transaction>>(emptyList()) }
     // Carrega o total de todas as transações para o mês especificado
-    LaunchedEffect(currentMonthYear, tagSelected) {
-        var currentTag: Tags;
+    LaunchedEffect(currentMonthYear, tagSelected, uiState.value.reload) {
 
-        when (tagSelected) {
+        val currentTag: Tags = when (tagSelected) {
             Tags.EXPENSE.tag -> {
-                currentTag = Tags.EXPENSE
+                Tags.EXPENSE
             }
 
             Tags.REVENUE.tag -> {
-                currentTag = Tags.REVENUE
+                Tags.REVENUE
             }
 
             else -> {
-                currentTag = Tags.RESERVATION
+                Tags.RESERVATION
             }
         }
 
-        transactionViewModel.getFinanceSelectedTotalByTagAndMonth(currentTag, currentMonthYear) {
-            totalAmount = it
-        }
+        transactionViewModel.getFinanceSelectedTotalByTagAndMonth(currentTag, currentMonthYear)
         transactionViewModel.getTransactionsByTagAndMonth(tagSelected, currentMonthYear)
             .collect { transactionsList ->
                 transactions = transactionsList
@@ -116,17 +107,11 @@ fun FinancialBalanceSelected(
         popUpDeleteRegisterIsVisible = !popUpDeleteRegisterIsVisible
     }
 
-    val context = LocalContext.current
     val sheetState = rememberCustomModalBottomSheetState(
         tag = tag.toString()
     )
 
-    val onDismissRequestOpoUp = {
-        popUpDeleteRegisterIsVisible = !popUpDeleteRegisterIsVisible
-    }
-
     val delete = {
-        transactions = transactions.filter { it.id != id }
         transactionViewModel.deleteTransactionById(id) { result ->
             if (result) {
                 transactions = transactions.filter { it.id != id }
@@ -135,12 +120,12 @@ fun FinancialBalanceSelected(
         }
     }
 
-    if (popUpDeleteRegisterIsVisible) {
-        PopUpDeleteRegister(
-            onDismissRequest = onDismissRequestOpoUp,
-            delete = delete,
-        )
-    }
+    PopUpDeleteRegisterEffect(
+        visible = popUpDeleteRegisterIsVisible,
+        delete = delete,
+        onDismissRequest = {
+            popUpDeleteRegisterIsVisible = !popUpDeleteRegisterIsVisible
+        })
 
     ModalBottomSheetLayout(
         scrimColor = Color.Unspecified,
@@ -165,7 +150,7 @@ fun FinancialBalanceSelected(
                 CustomTopBar(
                     color = Color.White,
                     nav = nav,
-                   )
+                )
             }
 
             FinanceSelectRow(expanded = expanded, tagSelected) {
@@ -177,7 +162,7 @@ fun FinancialBalanceSelected(
 
             Column(modifier = Modifier.padding(10.dp)) {
                 FinancialBalanceSelectedTop(
-                    totalAmount,
+                    uiState.value.totalSelected,
                     tagSelected
                 )
             }

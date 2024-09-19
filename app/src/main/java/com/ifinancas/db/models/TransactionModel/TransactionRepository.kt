@@ -1,11 +1,10 @@
-package com.ifinancas.db.models.TransactionModel
+package com.br.ifinancas.db.models.TransactionModel
 
-import com.ifinancas.data.enums.Tags
+import com.br.ifinancas.data.enums.Tags
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class TransactionRepository @Inject constructor(private val transactionDao: TransactionDao) {
-
     val allTransactions: Flow<List<Transaction>> = transactionDao.getAllTransactions()
 
     suspend fun insert(transaction: Transaction) {

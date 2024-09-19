@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -24,10 +24,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavHostController
-import com.ifinancas.R
-import com.ifinancas.data.enums.Tags
-import com.ifinancas.navigation.BottomBarScreen
-import com.ifinancas.navigation.NavigationScreens
+import com.br.ifinancas.R
+import com.br.ifinancas.data.enums.Tags
+import com.br.ifinancas.navigation.BottomBarScreen
+import com.br.ifinancas.navigation.NavigationScreens
 
 @SuppressLint("NewApi")
 @Composable

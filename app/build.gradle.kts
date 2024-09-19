@@ -9,15 +9,15 @@ plugins {
 }
 
 android {
-    namespace = "com.ifinancas"
+    namespace = "com.br.ifinancas"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.ifinancas"
+        applicationId = "com.br.ifinancas"
         minSdk = 24
         targetSdk = 34
-        versionCode = 74
-        versionName = "1.6.7"
+        versionCode = 76
+        versionName = "1.7.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

@@ -1,16 +1,16 @@
-package com.ifinancas.data.sealedClass
+package com.br.ifinancas.data.sealedClass
 
 import androidx.compose.ui.graphics.Color
-import com.ifinancas.data.enums.Category
-import com.ifinancas.ui.theme.APOSTACOLOR
-import com.ifinancas.ui.theme.ASSINATURACOLOR
-import com.ifinancas.ui.theme.CASACOLOR
-import com.ifinancas.ui.theme.INVESTIMENTOCOLOR
-import com.ifinancas.ui.theme.LANCHE_FASTFOODCOLOR
-import com.ifinancas.ui.theme.LAZERCOLOR
-import com.ifinancas.ui.theme.OUTROSCOLOR
-import com.ifinancas.ui.theme.SAUDECOLOR
-import com.ifinancas.ui.theme.TRABALHOCOLOR
+import com.br.ifinancas.data.enums.Category
+import com.br.ifinancas.ui.theme.APOSTACOLOR
+import com.br.ifinancas.ui.theme.ASSINATURACOLOR
+import com.br.ifinancas.ui.theme.CASACOLOR
+import com.br.ifinancas.ui.theme.INVESTIMENTOCOLOR
+import com.br.ifinancas.ui.theme.LANCHE_FASTFOODCOLOR
+import com.br.ifinancas.ui.theme.LAZERCOLOR
+import com.br.ifinancas.ui.theme.OUTROSCOLOR
+import com.br.ifinancas.ui.theme.SAUDECOLOR
+import com.br.ifinancas.ui.theme.TRABALHOCOLOR
 
 sealed class CategoryItem(val category: Category, val color: Color) {
     data object Apostas : CategoryItem(category = Category.APOSTAS, color = APOSTACOLOR)

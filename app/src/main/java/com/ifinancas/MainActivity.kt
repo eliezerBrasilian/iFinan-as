@@ -1,4 +1,4 @@
-package com.ifinancas
+package com.br.ifinancas
 
 import android.os.Build
 import android.os.Bundle
@@ -13,13 +13,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.adapty.Adapty
 import com.adapty.models.AdaptyConfig
-import com.ifinancas.data.gitignore.adaptyId
-import com.ifinancas.db.models.TransactionModel.TransactionViewModel
-import com.ifinancas.navigation.AppGraph
-import com.ifinancas.navigation.NavigationBarColor
-import com.ifinancas.ui.components.PopUpAddRegisterDialog
-import com.ifinancas.ui.screens.Home.HomeViewModel
-import com.ifinancas.ui.theme.IFinançasTheme
+import com.br.ifinancas.data.gitignore.adaptyId
+import com.br.ifinancas.db.models.TransactionModel.TransactionViewModel
+import com.br.ifinancas.navigation.AppGraph
+import com.br.ifinancas.navigation.NavigationBarColor
+import com.br.ifinancas.ui.components.PopUpAddRegisterDialog
+import com.br.ifinancas.ui.screens.home.HomeViewModel
+import com.br.ifinancas.ui.theme.IFinançasTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

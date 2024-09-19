@@ -1,4 +1,4 @@
-package com.ifinancas.db.models.PatrimonioModel
+package com.br.ifinancas.db.models.PatrimonioModel
 
 import androidx.room.Embedded
 import androidx.room.Entity
@@ -6,7 +6,7 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 import androidx.room.Relation
-import com.ifinancas.db.models.PatrimonioNamesModel.PatrimonioNamesModel
+import com.br.ifinancas.db.models.PatrimonioNamesModel.PatrimonioNamesModel
 
 @Entity(
     tableName = "patrimonio_table",

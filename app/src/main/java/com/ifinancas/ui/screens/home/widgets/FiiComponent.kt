@@ -1,4 +1,4 @@
-package com.ifinancas.ui.screens.Home.widgets
+package com.br.ifinancas.ui.screens.home.widgets
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -17,9 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ifinancas.ui.screens.Home.HomeUiState
-import com.ifinancas.ui.screens.Home.HomeViewModel
-import com.ifinancas.utils.AppUtils.Companion.toDefaultCurrency
+import com.br.ifinancas.ui.screens.home.HomeUiState
+import com.br.ifinancas.ui.screens.home.HomeViewModel
+import com.br.ifinancas.utils.AppUtils.Companion.toDefaultCurrency
 import compose.icons.FontAwesomeIcons
 import compose.icons.fontawesomeicons.Solid
 import compose.icons.fontawesomeicons.solid.Edit

@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun LightView(children:@Composable ()->Unit){
+fun LightView(children: @Composable () -> Unit) {
     Box(
         modifier = Modifier
             .background(Color.White, RoundedCornerShape(12.dp))

@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -18,9 +18,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ifinancas.R
-import com.ifinancas.db.models.TransactionModel.Transaction
-import com.ifinancas.ui.screens.Home.widgets.MonthView
+import com.br.ifinancas.R
+import com.br.ifinancas.db.models.TransactionModel.Transaction
+import com.br.ifinancas.ui.screens.home.widgets.MonthView
 
 
 @Composable

@@ -1,6 +1,6 @@
-package com.ifinancas.data
+package com.br.ifinancas.data
 
-import com.ifinancas.R
+import com.br.ifinancas.R
 
 enum class FinanceCardOrientation {
     HORIZONTAL, VERTICAL

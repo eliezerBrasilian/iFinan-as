@@ -1,4 +1,4 @@
-package com.ifinancas.db.models.TransactionModel
+package com.br.ifinancas.db.models.TransactionModel
 
 import android.content.Context
 import android.os.Build
@@ -6,16 +6,16 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ifinancas.R
-import com.ifinancas.data.enums.Category
-import com.ifinancas.data.enums.Dia
-import com.ifinancas.data.enums.Tags
-import com.ifinancas.services.DateTimeService
+import com.br.ifinancas.R
+import com.br.ifinancas.data.enums.Category
+import com.br.ifinancas.data.enums.Dia
+import com.br.ifinancas.data.enums.Tags
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import java.time.LocalDate
@@ -28,17 +28,44 @@ const val MAX_CHARACTER = 70
 @RequiresApi(Build.VERSION_CODES.O)
 @HiltViewModel
 class TransactionViewModel @Inject constructor(
-    private val repository: TransactionRepository,
-    private val dateTimeService: DateTimeService
+    private val repository: TransactionRepository
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(TransactionUiState())
     val uiState = _uiState.asStateFlow()
 
-    val allTransactions: Flow<List<Transaction>> = repository.allTransactions
+
+    val allTransactions = repository.allTransactions
 
     fun insert(transaction: Transaction) = viewModelScope.launch {
         repository.insert(transaction)
+    }
+
+    fun loadTransactions() = viewModelScope.launch {
+        val list = repository.allTransactions.firstOrNull() ?: emptyList()
+        _uiState.update { currentState ->
+            currentState.copy(transactionList = list)
+        }
+    }
+
+
+    fun resetFields() {
+        _uiState.update {
+            it.copy(
+                valueInput = "",
+                descriptionInput = "",
+                daySelected = Dia.TODAY,
+                localDateTime = Date(),
+                categorySelected = Category.OUTROS,
+                savedSuccessfully = false,
+                categoryExpanded = false,
+                isFocused = false,
+                buttonIsLoading = false,
+                total = 0f,
+                totalSelected = 0f,
+                reload = false
+            )
+        }
     }
 
     // Obter o total de uma tag específica em um mês
@@ -54,15 +81,11 @@ class TransactionViewModel @Inject constructor(
 
     fun getFinanceSelectedTotalByTagAndMonth(
         tag: Tags, monthYear: String,
-        callback: (total: Float) -> Unit
-    ): Unit {
-
+    ) {
         viewModelScope.launch {
             val total = repository.getTotalByTagAndMonth(tag, monthYear)
-            callback(total)
+            _uiState.update { it.copy(totalSelected = total) }
         }
-
-
     }
 
     fun getTotalByMonth(monthYear: String, callback: (total: Float) -> Unit): Unit {
@@ -98,17 +121,6 @@ class TransactionViewModel @Inject constructor(
 
     val handleCategoryChange: (category: Category) -> Unit = { v ->
         _uiState.update { it.copy(categoryExpanded = false, categorySelected = v) }
-    }
-
-    val handleSelectDayChange: (day: Dia) -> Unit = { day ->
-        _uiState.update { it.copy(daySelected = day) }
-
-        if (day == Dia.TODAY) {
-            _uiState.update { it.copy(localDateTime = Date()) }
-        }
-        if (day == Dia.YESTERDAY) {
-            _uiState.update { it.copy(localDateTime = dateTimeService.getYesterday()) }
-        }
     }
 
 
@@ -190,7 +202,11 @@ class TransactionViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 repository.deleteById(id)
+                _uiState.update { currentState ->
+                    currentState.copy(reload = false)
+                }
                 callback(true)
+
             } catch (e: Exception) {
                 callback(false)
             }

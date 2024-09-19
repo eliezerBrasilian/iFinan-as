@@ -1,11 +1,11 @@
-package com.ifinancas.services.impl
+package com.br.ifinancas.services.impl
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
-import com.ifinancas.R
-import com.ifinancas.services.DateTimeService
-import com.ifinancas.utils.AppUtils.Companion.AppTag
+import com.br.ifinancas.R
+import com.br.ifinancas.services.DateTimeService
+import com.br.ifinancas.utils.AppUtils.Companion.AppTag
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.text.SimpleDateFormat
 import java.time.ZoneId

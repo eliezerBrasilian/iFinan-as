@@ -1,19 +1,19 @@
-package com.ifinancas.db
+package com.br.ifinancas.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.ifinancas.db.models.FiModel.FiDao
-import com.ifinancas.db.models.FiModel.FiModel
-import com.ifinancas.db.models.FiiNamesModel.FiisNameDao
-import com.ifinancas.db.models.FiiNamesModel.FiisNamesModel
-import com.ifinancas.db.models.PatrimonioModel.PatrimonioDao
-import com.ifinancas.db.models.PatrimonioModel.PatrimonioModel
-import com.ifinancas.db.models.PatrimonioNamesModel.PatrimonioNamesDao
-import com.ifinancas.db.models.PatrimonioNamesModel.PatrimonioNamesModel
-import com.ifinancas.db.models.TransactionModel.Converters
-import com.ifinancas.db.models.TransactionModel.Transaction
-import com.ifinancas.db.models.TransactionModel.TransactionDao
+import com.br.ifinancas.db.models.FiModel.FiDao
+import com.br.ifinancas.db.models.FiModel.FiModel
+import com.br.ifinancas.db.models.FiiNamesModel.FiisNameDao
+import com.br.ifinancas.db.models.FiiNamesModel.FiisNamesModel
+import com.br.ifinancas.db.models.PatrimonioModel.PatrimonioDao
+import com.br.ifinancas.db.models.PatrimonioModel.PatrimonioModel
+import com.br.ifinancas.db.models.PatrimonioNamesModel.PatrimonioNamesDao
+import com.br.ifinancas.db.models.PatrimonioNamesModel.PatrimonioNamesModel
+import com.br.ifinancas.db.models.TransactionModel.Converters
+import com.br.ifinancas.db.models.TransactionModel.Transaction
+import com.br.ifinancas.db.models.TransactionModel.TransactionDao
 
 @Database(
     entities = [

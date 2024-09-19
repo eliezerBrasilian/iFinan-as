@@ -1,4 +1,4 @@
-package com.ifinancas.db.models.FiModel
+package com.br.ifinancas.db.models.FiModel
 
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

@@ -1,4 +1,4 @@
-package com.ifinancas.ui.theme
+package com.br.ifinancas.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

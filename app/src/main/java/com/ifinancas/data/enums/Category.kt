@@ -1,7 +1,7 @@
-package com.ifinancas.data.enums
+package com.br.ifinancas.data.enums
 
 import android.content.Context
-import com.ifinancas.R
+import com.br.ifinancas.R
 
 enum class Category(val stringResId: Int) {
     APOSTAS(R.string.apostas),

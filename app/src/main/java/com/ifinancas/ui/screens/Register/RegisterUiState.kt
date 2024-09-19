@@ -1,7 +1,7 @@
-package com.ifinancas.ui.screens.Register
+package com.br.ifinancas.ui.screens.Register
 
-import com.ifinancas.data.enums.Category
-import com.ifinancas.data.enums.Dia
+import com.br.ifinancas.data.enums.Category
+import com.br.ifinancas.data.enums.Dia
 import java.util.Date
 
 data class RegisterUiState(

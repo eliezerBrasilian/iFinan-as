@@ -1,4 +1,4 @@
-package com.ifinancas.navigation
+package com.br.ifinancas.navigation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

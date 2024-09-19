@@ -1,4 +1,4 @@
-package com.ifinancas.db.models.TransactionModel
+package com.br.ifinancas.db.models.TransactionModel
 
 import androidx.room.Dao
 import androidx.room.Insert

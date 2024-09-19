@@ -1,11 +1,11 @@
-package com.ifinancas.navigation
+package com.br.ifinancas.navigation
 
 import android.content.Context
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.ifinancas.R
+import com.br.ifinancas.R
 
 sealed class BottomBarScreen(
     val route: String,

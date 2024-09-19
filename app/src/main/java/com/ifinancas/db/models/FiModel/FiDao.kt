@@ -1,4 +1,4 @@
-package com.ifinancas.db.models.FiModel
+package com.br.ifinancas.db.models.FiModel
 
 import androidx.room.Dao
 import androidx.room.Insert

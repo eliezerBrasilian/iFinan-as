@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Text
@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
- fun TextOrLoading(isLoading: Boolean?, text:String) {
+fun TextOrLoading(isLoading: Boolean?, text: String) {
     if (isLoading == true) {
         CircularProgressIndicator(
             modifier = Modifier.size(30.dp),

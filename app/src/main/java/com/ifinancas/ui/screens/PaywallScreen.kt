@@ -1,4 +1,4 @@
-package com.ifinancas.ui.screens
+package com.br.ifinancas.ui.screens
 
 import android.app.Activity
 import android.widget.Toast
@@ -35,11 +35,11 @@ import androidx.compose.ui.unit.sp
 import com.adapty.Adapty
 import com.adapty.models.AdaptyPaywallProduct
 import com.adapty.utils.AdaptyResult
-import com.ifinancas.R
-import com.ifinancas.data.pavanamFamily
-import com.ifinancas.ui.components.BackgroundImage
-import com.ifinancas.ui.components.BenefitRow
-import com.ifinancas.ui.components.CircleClose
+import com.br.ifinancas.R
+import com.br.ifinancas.data.pavanamFamily
+import com.br.ifinancas.ui.components.BackgroundImage
+import com.br.ifinancas.ui.components.BenefitRow
+import com.br.ifinancas.ui.components.CircleClose
 import compose.icons.FontAwesomeIcons
 import compose.icons.fontawesomeicons.Solid
 import compose.icons.fontawesomeicons.solid.Star

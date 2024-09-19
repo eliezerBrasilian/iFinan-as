@@ -1,4 +1,4 @@
-package com.ifinancas.ui.screens.Register
+package com.br.ifinancas.ui.screens.Register
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -25,14 +26,14 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.ifinancas.R
-import com.ifinancas.db.models.TransactionModel.TransactionViewModel
-import com.ifinancas.navigation.CustomTopBar
-import com.ifinancas.navigation.NavigationBarColor
-import com.ifinancas.ui.components.RegisterScreenOverlayView
-import com.ifinancas.ui.components.RegisterValueInput
-import com.ifinancas.utils.AppUtils.Companion.getBackgroundColor
-import com.ifinancas.utils.AppUtils.Companion.getTitleText
+import com.br.ifinancas.R
+import com.br.ifinancas.db.models.TransactionModel.TransactionViewModel
+import com.br.ifinancas.navigation.CustomTopBar
+import com.br.ifinancas.navigation.NavigationBarColor
+import com.br.ifinancas.ui.components.RegisterScreenOverlayView
+import com.br.ifinancas.ui.components.RegisterValueInput
+import com.br.ifinancas.utils.AppUtils.Companion.getBackgroundColor
+import com.br.ifinancas.utils.AppUtils.Companion.getTitleText
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -49,6 +50,10 @@ fun RegisterScreen(
 
     val backgroundSelected by remember {
         mutableStateOf(getBackgroundColor(tag.toString()))
+    }
+
+    LaunchedEffect(key1 = null) {
+        transactionViewModel.resetFields()
     }
 
     NavigationBarColor(statusBarColor = backgroundSelected, useDarkIcons = false)
@@ -82,23 +87,9 @@ fun RegisterScreen(
         Column {
             Spacer(modifier = Modifier.height(10.dp))
             RegisterScreenOverlayView(
-                uiState.value.daySelected,
-                transactionViewModel.handleSelectDayChange,
-                uiState.value.categorySelected,
-                transactionViewModel.handleCategoryChange,
-                uiState.value.categoryExpanded,
-                transactionViewModel.toggleCategoryExpanded,
-                tag,
-                uiState.value.buttonIsLoading,
-                uiState.value.descriptionInput,
-                transactionViewModel.onDescriptionChange,
-                {
-                    transactionViewModel.handleSendRegister(
-                        context,
-                        tag
-                    )
-                },
-                uiState.value.savedSuccessfully
+                uiState,
+                transactionViewModel,
+                tag
             )
 
         }

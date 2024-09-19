@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -29,9 +29,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ifinancas.R
-import com.ifinancas.data.enums.Tags
-import com.ifinancas.db.models.TransactionModel.Transaction
+import com.br.ifinancas.R
+import com.br.ifinancas.data.enums.Tags
+import com.br.ifinancas.db.models.TransactionModel.Transaction
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

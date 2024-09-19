@@ -1,4 +1,4 @@
-package com.ifinancas.navigation
+package com.br.ifinancas.navigation
 
 //noinspection UsingMaterialAndMaterial3Libraries
 import android.annotation.SuppressLint
@@ -22,12 +22,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.navigation
-import com.ifinancas.db.models.TransactionModel.TransactionViewModel
-import com.ifinancas.ui.screens.FinancialBalanceSelected
-import com.ifinancas.ui.screens.Home.Home
-import com.ifinancas.ui.screens.Home.HomeViewModel
-import com.ifinancas.ui.screens.Register.RegisterScreen
-import com.ifinancas.ui.screens.transactionsHistory.TransactionsHistory
+import com.br.ifinancas.db.models.TransactionModel.TransactionViewModel
+import com.br.ifinancas.ui.screens.FinancialBalanceSelected
+import com.br.ifinancas.ui.screens.Register.RegisterScreen
+import com.br.ifinancas.ui.screens.home.Home
+import com.br.ifinancas.ui.screens.home.HomeViewModel
+import com.br.ifinancas.ui.screens.transactionsHistory.TransactionsHistory
 
 
 @SuppressLint(
@@ -64,9 +64,7 @@ fun AppGraph(
                             transactionViewModel
                         )
                     }
-                    composable(NavigationScreens.PROFILE) {
-                        //todo SAIR
-                    }
+
                     composable(BottomBarScreen.Historico(context).route) {
                         TransactionsHistory(
                             pv

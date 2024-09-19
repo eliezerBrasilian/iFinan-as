@@ -1,4 +1,4 @@
-package com.ifinancas.ui.screens.Home.widgets
+package com.br.ifinancas.ui.screens.home.widgets
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -11,8 +11,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.br.ifinancas.ui.screens.home.HomeViewModel
 import com.frajola.BrazilianCurrencyVisualTransformation
-import com.ifinancas.ui.screens.Home.HomeViewModel
 
 
 @Composable

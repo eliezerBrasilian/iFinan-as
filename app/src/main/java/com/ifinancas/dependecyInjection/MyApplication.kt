@@ -1,4 +1,4 @@
-package com.ifinancas.dependecyInjection
+package com.br.ifinancas.dependecyInjection
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

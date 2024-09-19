@@ -1,4 +1,4 @@
-package com.ifinancas.ui.screens.Home
+package com.br.ifinancas.ui.screens.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -31,10 +31,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.ifinancas.R
-import com.ifinancas.ui.theme.BACKGROUNDGREEN
-import com.ifinancas.ui.theme.BACKGROUNDRED
-import com.ifinancas.utils.AppUtils.Companion.toDefaultCurrency
+import com.br.ifinancas.R
+import com.br.ifinancas.ui.theme.BACKGROUNDGREEN
+import com.br.ifinancas.ui.theme.BACKGROUNDRED
+import com.br.ifinancas.utils.AppUtils.Companion.toDefaultCurrency
 import compose.icons.FontAwesomeIcons
 import compose.icons.fontawesomeicons.Solid
 import compose.icons.fontawesomeicons.solid.Bell

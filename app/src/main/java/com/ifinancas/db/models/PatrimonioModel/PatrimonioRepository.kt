@@ -1,4 +1,4 @@
-package com.ifinancas.db.models.PatrimonioModel
+package com.br.ifinancas.db.models.PatrimonioModel
 
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -19,5 +19,9 @@ class PatrimonioRepository @Inject constructor(private val patrimonioDao: Patrim
 
     suspend fun getPatrimonioTotal(monthYear: String): Float {
         return patrimonioDao.getPatrimonioTotal(monthYear) ?: 0f
+    }
+
+    suspend fun delete(id: Int) {
+        return patrimonioDao.deleteById(id)
     }
 }

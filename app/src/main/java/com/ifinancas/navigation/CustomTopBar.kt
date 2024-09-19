@@ -1,4 +1,4 @@
-package com.ifinancas.navigation
+package com.br.ifinancas.navigation
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
@@ -15,7 +15,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.ifinancas.R
+import com.br.ifinancas.R
 import compose.icons.FontAwesomeIcons
 import compose.icons.fontawesomeicons.Solid
 import compose.icons.fontawesomeicons.solid.ArrowLeft

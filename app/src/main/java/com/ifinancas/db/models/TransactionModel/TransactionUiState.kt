@@ -1,7 +1,7 @@
-package com.ifinancas.db.models.TransactionModel
+package com.br.ifinancas.db.models.TransactionModel
 
-import com.ifinancas.data.enums.Category
-import com.ifinancas.data.enums.Dia
+import com.br.ifinancas.data.enums.Category
+import com.br.ifinancas.data.enums.Dia
 import java.util.Date
 
 data class TransactionUiState(
@@ -13,5 +13,9 @@ data class TransactionUiState(
     val buttonIsLoading: Boolean = false,
     val localDateTime: Date = Date(),
     val savedSuccessfully: Boolean = false,
-    val isFocused: Boolean = false
+    val isFocused: Boolean = false,
+    val total: Float = 0f,
+    val transactionList: List<Transaction> = emptyList(),
+    val totalSelected: Float = 0f,
+    val reload: Boolean = false
 )

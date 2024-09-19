@@ -1,4 +1,4 @@
-package com.ifinancas.ui.screens.splash
+package com.br.ifinancas.ui.screens.splash
 
 import android.view.animation.OvershootInterpolator
 import androidx.compose.animation.core.Animatable
@@ -19,7 +19,7 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.ifinancas.ui.components.AppLogoText
+import com.br.ifinancas.ui.components.AppLogoText
 import kotlinx.coroutines.delay
 
 @Composable

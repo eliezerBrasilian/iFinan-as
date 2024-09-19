@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -13,13 +13,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.ifinancas.data.montserratFamily
+import com.br.ifinancas.data.montserratFamily
 import compose.icons.FontAwesomeIcons
 import compose.icons.fontawesomeicons.Solid
 import compose.icons.fontawesomeicons.solid.ArrowLeft
 
 @Composable
-fun ShopScreenTitleRow(){
+fun ShopScreenTitleRow() {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.height(30.dp)

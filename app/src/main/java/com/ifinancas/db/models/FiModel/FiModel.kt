@@ -1,4 +1,4 @@
-package com.ifinancas.db.models.FiModel
+package com.br.ifinancas.db.models.FiModel
 
 import androidx.room.Embedded
 import androidx.room.Entity
@@ -6,7 +6,7 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 import androidx.room.Relation
-import com.ifinancas.db.models.FiiNamesModel.FiisNamesModel
+import com.br.ifinancas.db.models.FiiNamesModel.FiisNamesModel
 
 @Entity(
     tableName = "fii_table",

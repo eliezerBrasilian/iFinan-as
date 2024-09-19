@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import android.annotation.SuppressLint
 import android.view.animation.OvershootInterpolator
@@ -23,7 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.ifinancas.data.sealedClass.MenuItems
+import com.br.ifinancas.data.sealedClass.MenuItems
 
 @SuppressLint("NewApi")
 @Composable

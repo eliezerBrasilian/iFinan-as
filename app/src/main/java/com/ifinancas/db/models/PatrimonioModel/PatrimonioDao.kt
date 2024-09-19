@@ -1,4 +1,4 @@
-package com.ifinancas.db.models.PatrimonioModel
+package com.br.ifinancas.db.models.PatrimonioModel
 
 import androidx.room.Dao
 import androidx.room.Insert

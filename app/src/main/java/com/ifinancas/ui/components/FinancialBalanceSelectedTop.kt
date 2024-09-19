@@ -1,4 +1,4 @@
-package com.ifinancas.ui.components
+package com.br.ifinancas.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,9 +15,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ifinancas.R
-import com.ifinancas.data.enums.Tags
-import com.ifinancas.utils.AppUtils.Companion.toDefaultCurrency
+import com.br.ifinancas.R
+import com.br.ifinancas.data.enums.Tags
+import com.br.ifinancas.utils.AppUtils.Companion.toDefaultCurrency
 
 @Composable
 fun FinancialBalanceSelectedTop(

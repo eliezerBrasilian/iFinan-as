@@ -1,4 +1,4 @@
-package com.ifinancas.ui.screens.Home.widgets
+package com.br.ifinancas.ui.screens.home.widgets
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,11 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.ifinancas.R
-import com.ifinancas.data.enums.Tags
-import com.ifinancas.ui.components.CardFinanceItem
-import com.ifinancas.ui.components.ViewSobreposta
-import com.ifinancas.ui.theme.BACKGROUNDCARDSOBREPOSTO
+import com.br.ifinancas.R
+import com.br.ifinancas.data.enums.Tags
+import com.br.ifinancas.ui.components.CardFinanceItem
+import com.br.ifinancas.ui.components.ViewSobreposta
+import com.br.ifinancas.ui.theme.BACKGROUNDCARDSOBREPOSTO
 
 @Composable
 fun BalanceCards(
