@@ -12,6 +12,8 @@ Um aplicativo criado com carinho para você ter controle total sobre seu dinheir
 
 
 ## Screenshots
+![photo_5147805002369183133_y](https://github.com/user-attachments/assets/d260de20-f536-43b6-9bd6-5c603ee263db)
+
 
 
 ## Relacionados
